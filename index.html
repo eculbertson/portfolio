@@ -2,26 +2,117 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>Eli Culbertson - Web Design and Coding</title>
 		<link rel="stylesheet" href="css/portfolioIndex.css">
 		<link href="https://fonts.googleapis.com/css?family=Balthazar&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
 	</head>
 	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//Accordians Nav bar on mouseover of arrow SVG.
+				$("#arrowIcon").hover(function(){
+					$("#navBar").animate({width: '90%'});
+					$("#arrowIcon").animate({left: '90%'});
+					$("#arrowIcon").addClass('rotate');
+					$(".navItem").addClass('display');
+				});
+
+				//Returns the Nav bar to default on mouseleave of Nav div.
+				$("#navBar").mouseleave(function(){
+					$("#navBar").animate({width: '215px'});
+					$("#arrowIcon").animate({left: '260px'});
+					$("#arrowIcon").removeClass('rotate');
+					$(".navItem").removeClass('display');
+				});
+			});
+		</script>	
+
 		<div id = "header">
 			<div id = "navBar">
-				<h2>Eli <br> &nbsp;&nbsp; Culbertson <img id = "arrowIcon" src = "arrowIcon.svg"></h2>
+				<h2 id = "nameBox"><a href = "http://www.eliculbertson.com">Eli <br> &nbsp;&nbsp; Culbertson</a></h2>
+				<img id = "arrowIcon" src = "images/arrowIcon.svg" alt = "Arrow icon for the navigation bar.">
+				
+				<h2 class = "navItem"><a href = "#aboutSection">About</a></h2>
+				<h2 class = "navItem"><a href = "#workSection">Work</a></h2>
+				<h2 class = "navItem"><a href = "docs/eculbertson-resume.pdf" target="_blank">Resume</a></h2>				
+
 			</div>
 		</div>
 
 		<div id = "wrapper"> 
 
+			<div id = "aboutSection">
+				<div id = "headshotContainer">
+					<img id = "headshot" src = "images/eculbertson.jpg" alt = "A very professional picture of Eli Culbertson.">
+				</div>
+				
+				<div class = "gridItem" id = "description">
+					<div  id = "aboutText">
+					<h2><span class = "emphasis">A</span>bout <span class = "emphasis">m</span>e</h2>
+					<p> 
+						I'm an alum of Washington State University Vancouver, class of 2020. I graduated with a Bachelor's Degree in Digital Technology & Culture and minored in Business Administration. My specialty is web design, particularly HTML5, CSS3, and Javascript, as well as content creation and management. 
+					</p>
+					<p>
+						Contact me on <b><a href = "https://www.linkedin.com/in/eli-culbertson-88b5b11a6/" target="_blank">LinkedIn</a></b> or 
+						<b><a href = "mailto:eli.culbertson@gmail.com" target = "_top">send me an email.</a></b>
+					</p>	
+				</div>
+					<img class = "divImage" src = "images/block1.svg" alt = "Color block to accentuate the background.">
+				</div>
+			</div>	
+			<div id = "workSection">
+
+				<div class = "workBox">
+
+					<a href = "http://www.eliculbertson.com/weatherapi.html" target="_blank"><img class = "workImg" src = "images/weatherAPI.png" alt = "Screenshot of the WeatherAPI website created by Eli Culbertson."></a>
+
+					<p class = "workText">
+						WeatherAPI is a responsive weather forecast app formatted using CSS Grid. It makes use of an API that can give current weather or a five day forecast based on user input.
+					</p>
+
+					<img class = "divImage" src = "images/block3.svg" alt = "Color block to accentuate the background.">
+				</div>
+
+				<div class = "workBox">
+					<a href = "http://www.eliculbertson.com/infoDump.html" target="_blank"><img class = "workImg" src = "images/infoDump.png" alt = "Screenshot of the InfoDump narrative website created by Eli Culbertson."></a>
+
+					<p class = "workText">
+						InfoDump is a digital narrative that I wrote and programmed. It uses JavaScript to actively respond to user inputs. The code is made to be foolproof so that users must respond to queries before moving forward in the narrative.
+					</p>
+
+					<img class = "divImage" src = "images/block2.svg" alt = "Color block to accentuate the background.">
+				</div>
+
+				<div class = "workBox">
+
+					<a href = "http://www.eliculbertson.com/monte_cristo.html" target="_blank"><img class = "workImg" src = "images/monteCristo.png" alt = "Screenshot of the Annotated Count of Monte Cristo website created by Eli Culbertson."></a>
+
+					<p class = "workText">
+						Annotated Count of Monte Cristo is a section of the titular book annotated with modal boxes and text links that explain some of the more obscure references in the story. 
+					</p>
+
+					<img class = "divImage" src = "images/block3.svg" alt = "Color block to accentuate the background.">
+				</div>
+
+				<div class = "workBox">
+					<a href = "http://www.eliculbertson.com/rumorbusting.html" target="_blank"><img class = "workImg" src = "images/rumorBusting.png" alt = "Screenshot of the WSU Rumor Busting website created by Eli Culbertson."></a>
+
+					<p class = "workText">
+						WSU Rumor Busting is a digital narrative written by myself and Mallory Hobson which I coded by hand. It makes use of JavaScript parameters and CSS3 animations in order to present the story in a unique way.
+					</p>
+
+					<img class = "divImage" src = "images/block2.svg" alt = "Color block to accentuate the background."> 
+				</div>
+			</div>
 		</div>
 
 		<div id = "footer">
-			<a href = "#header">Back to Top</a>
+			<a href = "">Back to Top</a>
 		</div>	
 
-		</div>	
 	</body>
 </html>

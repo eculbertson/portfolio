@@ -1,27 +1,367 @@
+/*Pagewide*/
 body{ 
     font-size:20px;
     font-family: 'Balthazar', 'Montserrat';
     height: 2000px;
+    background-color: #eeeeee;
 }
 
+ul{
+	list-style-type: none;
+}
+
+a{
+	color:#fff;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+a:visited{
+	color:#d2d2d2;
+}
+
+.divImage{
+	user-select: none;
+}
+
+/*Navbar*/
 #navBar{
-	background-color:grey;
+	width:215px;
+	background-color:#295f48;
 	color:white;
 	padding:5px;
-	padding-left: 10px;
-	padding-right: 40px;
+	padding-left: 20px;
+	padding-right: 50px;
 	position:fixed;
-	transition: width 2s ease;
+	top:0;
+	left:2.5%;
+	z-index: 100;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-column-gap: 20px;
 }
 
-#navBar:hover{
-	width:90%;
+#nameBox{
+	width:215px;
+}
+
+#nameBox a:hover{
+	text-decoration: none;
+}
+
+.navItem{
+	padding:10px;
+	display: none;
+	text-align: center;
+}
+
+.navItemMobile{
+	display: none;
+	text-align: center;
+	padding:30px;
+	list-style-type: none;
+}
+
+.display{
+	display: inline;
+}
+
+.rotate{
+	transform: rotate(180deg);
 }
 
 #arrowIcon{
 	height:25px;
 	position: fixed;
-	top:55px;
-	left:175px;
+	top:45px;
+	left:260px;
 }
 
+#arrowIconMobile{
+	display: none;
+	height:25px;
+	position: fixed;
+	top:47px;
+	left:220px;
+	transform: rotate(90deg);
+}
+
+/*About Section*/
+#aboutSection{
+	display: grid;
+	grid-template-columns: repeat(1,1fr);
+	grid-gap:20px;
+	grid-template-columns: repeat(2,1fr);
+	margin-top:25px;
+}
+
+#headshotContainer{
+	padding:50px;
+	z-index:2;
+	min-width: 600px;
+	max-width: 800px;
+}
+
+#headshot{
+	width:100%;
+	border-right:solid 1px black;
+	border-bottom:solid 1px black;
+	filter: grayscale(100%);
+	transition: 1s;
+	margin-left:10%;
+}
+
+#headshot:hover{
+	filter:none;
+}
+
+#description{
+	width: 100%;
+	min-width: 570px;
+	max-width: 800px;
+	height: 500px;
+	padding:50px;
+	color:#fff;
+	margin-left:-125px;
+	margin-top:-20px;
+	position: relative;
+	z-index: 1;
+}
+
+#aboutText{
+	position: absolute;
+	padding:60px;
+	top:25%;
+	left:10%;
+}
+
+/*Work Section*/
+#workSection{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(2,1fr);
+	align-items: center;
+}
+
+.workBox{
+	width: 800px;
+	position: relative;
+}
+
+.workImg{
+	position: absolute;
+	width: 600px;
+	left:12.5%;
+	top:10%;
+	z-index: 3;
+	transition: 1s;
+}
+
+.workText{
+	color:white;
+	position: absolute;
+	margin:150px;
+	margin-top:300px;
+}
+
+.workImg:hover{
+	opacity: 0;
+}
+
+#footer a{
+	padding:20px;
+	color:#0e261b;
+}
+
+@media only screen and (max-width: 1030px) and (min-width: 770px) {
+
+	  #headshot{
+	  	margin-left:0px;
+	  	z-index: 7;
+	  	width:500px;
+	  }
+
+	  #headshot:hover{
+	  	z-index: 7;
+	  }
+
+	  #description{
+	  	margin-left:-300px;
+	  }
+
+	  #aboutText{
+	  	padding:80px;
+	  	top:15%;
+	  }
+
+	  #workSection{
+	  	margin-top:0px;
+	  	display: block;
+	  }
+
+	  .workBox{
+	  	width:700px;
+	  	margin-bottom:30px;
+	  	margin-left:15%;
+	  }
+
+	  .workImg{
+	  	width:500px;
+	  }
+
+	  .workText{
+	  	margin-top:250px;
+	  }
+  }
+
+@media only screen and (max-width: 770px) and (min-width: 420px){
+	  #aboutSection{
+	  	display: block;
+	  }
+
+	  #headshot{
+	  	margin-left:0px;
+	  	z-index: 7;
+	  }
+
+	  #headshot:hover{
+	  	z-index: 7;
+	  }
+
+	  #headshotContainer{
+	  	width:600px;
+	  	display: block;
+	  	margin: 0 auto;
+	  }
+
+	  #description{
+	  	display: block;
+	  	width: 700px;
+	  	margin:0 auto;
+	  	margin-top:-150px;
+	  	margin-left:-20px;
+	  }
+
+	  #workSection{
+	  	margin-top:100px;
+	  	display: block;
+	  }
+
+	  .workBox{
+	  	display: block;
+	  	width:700px;
+	  	margin:0 auto;
+	  	margin-bottom:30px;
+	  	margin-left:10px;
+	  }
+
+	  .workImg{
+	  	width:500px;
+	  }
+
+	  .workText{
+	  	padding:80px;
+	  	margin-top:225px;
+	  	margin-left:30px;
+	  }
+	}
+@media only screen and (max-width: 420px){
+  	#arrowIcon{
+  		display: none;
+  	}
+
+	#navBar{
+		width:150px;
+	}  	
+
+	#aboutSection{
+		display: block;
+	}
+
+	#headshot{
+		margin-left:-10px;
+		margin-top:35px;
+		z-index: 7;
+		width:300px;
+	}
+
+	#headshot:hover{
+		z-index: 7;
+	}
+
+	#headshotContainer{
+		width:400px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.divImage{
+		margin-left: -30px;
+		margin-top:-150px;
+		transform: scaleY(.5);
+		z-index: 1;
+	}
+
+	#aboutText{
+		font-size:15px;
+		margin-left:-40px;
+		margin-top:-100px;
+		width:300px;
+		z-index: 5;
+	}
+
+	#description{
+		display: block;
+		width: 700px;
+		margin:0 auto;
+		margin-top:-150px;
+		margin-left:-50px;
+	}
+
+	#workSection{
+		display: block;
+	}
+
+	.workBox{
+		display: block;
+		width:700px;
+		margin:0 auto;
+		margin-bottom:30px;
+		margin-left:10px;
+	}
+
+	.workImg{
+		width:300px;
+		border:1px solid black;
+		position: relative;
+		display: block;
+		margin-top:-200px;
+		margin-left:-50px;
+	}
+
+	.workImg:hover{
+		opacity: 1;
+	}
+
+	.workText{
+		width: 300px;
+		z-index: 5;
+		padding:80px;
+		margin-top:30px;
+		margin-left:-30px;
+	}
+}
+
+
+
+/* 
+Color Palette:
+#295f48 Light Green
+#204c39	Med Green
+#18392b	Dark Green
+#0e261b Darkest Green
+#eeeeee Grey
+*/
