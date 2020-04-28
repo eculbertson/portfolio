@@ -1,0 +1,27 @@
+body{ 
+    font-size:20px;
+    font-family: 'Balthazar', 'Montserrat';
+    height: 2000px;
+}
+
+#navBar{
+	background-color:grey;
+	color:white;
+	padding:5px;
+	padding-left: 10px;
+	padding-right: 40px;
+	position:fixed;
+	transition: width 2s ease;
+}
+
+#navBar:hover{
+	width:90%;
+}
+
+#arrowIcon{
+	height:25px;
+	position: fixed;
+	top:55px;
+	left:175px;
+}
+
